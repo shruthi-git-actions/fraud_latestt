@@ -33,8 +33,7 @@ import yaml
 
 
 # %%
-train_df_path=dvc.api.get_url('Data/creditcard.csv')
-#train_df_path = "Data/creditcard.csv"
+train_df_path = "Data/creditcard.csv"
 data_fraud = pd.read_csv(train_df_path)
 params = yaml.safe_load(open("params.yaml"))["params"]
 C=params["C"]
@@ -60,8 +59,8 @@ x=data_fraud.drop('Class',axis=1)
 # %%
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
 #x_train.head()
-x_test.to_csv("Data/x_test.csv")
-y_test.to_csv("Data/y_test.csv")
+x_test.to_csv("Output/x_test.csv")
+y_test.to_csv("Output/y_test.csv")
 
 # %%
 SVM = svm.SVC(C=C, kernel=kernel, degree=degree, gamma=gamma)
