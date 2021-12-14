@@ -59,8 +59,8 @@ x=data_fraud.drop('Class',axis=1)
 # %%
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
 #x_train.head()
-x_test.to_csv("Output/x_test.csv")
-y_test.to_csv("Output/y_test.csv")
+x_test.to_csv("Data/x_test.csv")
+y_test.to_csv("Data/y_test.csv")
 
 # %%
 SVM = svm.SVC(C=C, kernel=kernel, degree=degree, gamma=gamma)
